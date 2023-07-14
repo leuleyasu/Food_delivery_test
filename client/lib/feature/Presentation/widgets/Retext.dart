@@ -6,16 +6,17 @@ class ReuseText extends StatelessWidget {
     Key? key,
     required this.text,
      this.color=Colors.black54,
-     this.size=16
+     required this.size
   }) : super(key: key);
 final String text;
 final Color color;
-int size;
+double size;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       style: TextStyle(
+       fontSize: size,
         color: color,
         // fontWeight: FontWeight.bold
       ),

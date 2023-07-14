@@ -26,7 +26,7 @@ class _NearMeState extends State<NearMe> {
           itemCount: items.length,
           itemBuilder: (context, index) {
             return  Container(
-              height: 50,
+              height: 90,
               width: 100,
       decoration: BoxDecoration(
          color: Colors.blue,
@@ -37,7 +37,7 @@ class _NearMeState extends State<NearMe> {
 
                 child: Center(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                      child:  Text(
@@ -45,8 +45,22 @@ class _NearMeState extends State<NearMe> {
                     style: TextStyle(fontSize: 24, color: Colors.white),
                   ),
                       ),
-                      Container(),
-                      Container()
+                      Container(
+                        child: Column(
+                          children: [
+                            Text("Mamas kitchen"),
+                            Text("Mamas kitchen"),
+                            Text("Mamas kitchen")
+
+                          ],
+                        ),
+                      ),
+                      Container(
+                         child:  Text(
+                    items[index].toString(),
+                    style: TextStyle(fontSize: 24, color: Colors.white),
+                  ),
+                      )
                     ],
                   )
                 )

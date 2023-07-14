@@ -4,10 +4,10 @@ class DropdownListExample extends StatefulWidget {
   const DropdownListExample({super.key});
 
   @override
-  _DropdownListExampleState createState() => _DropdownListExampleState();
+  DropDownReuse createState() => DropDownReuse();
 }
 
-class _DropdownListExampleState extends State<DropdownListExample> {
+class DropDownReuse extends State<DropdownListExample> {
   String _selectedItem="12th Street, Wosen Grocery";
 
   List<String> _dropdownItems = [

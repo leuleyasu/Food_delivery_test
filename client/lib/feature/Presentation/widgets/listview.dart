@@ -1,29 +1,52 @@
 import 'package:flutter/material.dart';
 
-class ListViewBuilder extends StatelessWidget {
-  const ListViewBuilder({Key? key}) : super(key: key);
+
+class ListviewStatic extends StatefulWidget {
+  @override
+  _ListviewStaticState createState() => _ListviewStaticState();
+}
+
+class _ListviewStaticState extends State<ListviewStatic> {
+  final List<int> items = List.generate(10, (index) => index + 1);
+  final PageController _pageController = PageController(viewportFraction: 0.8);
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("ListView.builder")),
-      body: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (BuildContext context, int index) {
-            return   Container(
-        margin: EdgeInsets.only(right: 15,top: 10),
-        width: 200,
-        height: 300,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20)
-          ,
-          color: Colors.white,
-          image: const DecorationImage(image: AssetImage("asssets/img")
-          ,fit: BoxFit.cover
-          )
-        ),
+    return Container(
+      width: double.infinity,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        controller: _pageController,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return  Container(
+            height: 50,
+            width: 70,
+    decoration: BoxDecoration(
+       color: Colors.blue,
+      borderRadius: BorderRadius.circular(10)
+    ),
+      margin: EdgeInsets.all(10.0),
+
+
+              child: Center(
+                child: Text(
+                  items[index].toString(),
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
+              )
+      );
+
+      }),
     );
-          }),
-    );
+
   }
-}
+
+
+  }

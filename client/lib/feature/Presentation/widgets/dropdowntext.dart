@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../Data/PrductService.dart';
+
 class DropdownListExample extends StatefulWidget {
   const DropdownListExample({super.key});
 
@@ -10,7 +12,7 @@ class DropdownListExample extends StatefulWidget {
 class DropDownReuse extends State<DropdownListExample> {
   String _selectedItem="12th Street, Wosen Grocery";
 
-  List<String> _dropdownItems = [
+  final List<String> _dropdownItems = [
     '12th Street, Wosen Grocery',
     '14th Street, Wosen Grocery',
     '13th Street, Wosen Grocery',
@@ -19,7 +21,7 @@ class DropDownReuse extends State<DropdownListExample> {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  SizedBox(
 
           width: 200, // Adjust the width according to your requirements
           child: DropdownButtonHideUnderline(
@@ -44,4 +46,5 @@ class DropDownReuse extends State<DropdownListExample> {
 
 
   }
+
 }

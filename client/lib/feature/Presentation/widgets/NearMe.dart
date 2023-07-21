@@ -42,23 +42,21 @@ class _NearMeState extends State<NearMe> {
                       Container(
                      child:  Text(
                     items[index].toString(),
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: const TextStyle(fontSize: 24, color: Colors.white),
                   ),
                       ),
-                      Container(
-                        child: Column(
-                          children: [
-                            Text("Mamas kitchen"),
-                            Text("Mamas kitchen"),
-                            Text("Mamas kitchen")
+                    const Column(
+                      children: [
+                        Text("Mamas kitchen"),
+                        Text("Mamas kitchen"),
+                        Text("Mamas kitchen")
 
-                          ],
-                        ),
-                      ),
+                      ],
+                    ),
                       Container(
                          child:  Text(
                     items[index].toString(),
-                    style: TextStyle(fontSize: 24, color: Colors.white),
+                    style: const TextStyle(fontSize: 24, color: Colors.white),
                   ),
                       )
                     ],

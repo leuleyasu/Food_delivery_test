@@ -1,9 +1,11 @@
+import 'package:client/feature/Data/PrductService.dart';
 import 'package:client/feature/Presentation/widgets/NearMe.dart';
 import 'package:client/feature/Presentation/widgets/Retext.dart';
 import 'package:client/feature/Presentation/widgets/dropdowntext.dart';
 import 'package:client/feature/Presentation/widgets/listview.dart';
 import 'package:flutter/material.dart';
 
+import '../../Data/Model/ProductModel.dart';
 import '../widgets/dyanamic_list.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,13 +16,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
+  @override
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 10,right: 10),
+          padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
           child: Container(
             width: double.infinity,
             child: Column(
@@ -81,36 +87,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                Container(
-                  height: 150,
-                  width: double.maxFinite,
-                  child: DynamicListview(),
-                ),
+                Container(height: 150, width: double.maxFinite, child: DynamicListview()),
                 Container(
                   height: 100,
                   width: double.maxFinite,
-                  child: ListviewStatic(
-
-                  ),
+                  child: ListviewStatic(),
                 ),
                 Row(
                   children: [
-        ReuseText(text: "Break fast | Lunch | Dinner", size: 20)
+                    ReuseText(text: "Break fast | Lunch | Dinner", size: 20)
                   ],
                 ),
-                          Container(
-                  height: 100,
-                  width: double.maxFinite,
-                  child: ListviewStatic(
-                  )
-                  ),
-                          Container(
-                  height: double.maxFinite,
-                  width: 320,
-                  child: NearMe(
-                  )
-                  ),
-
+                Container(
+                    height: 100,
+                    width: double.maxFinite,
+                    child: ListviewStatic()),
+                Container(
+                    height: double.maxFinite, width: 320, child: NearMe()),
               ],
             ),
           ),
@@ -118,4 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+
 }
